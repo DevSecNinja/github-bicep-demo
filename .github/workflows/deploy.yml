@@ -1,4 +1,10 @@
-on: [push]
+on:
+  push:
+    branches-ignore:
+    - main
+  pull_request:
+    branches:
+    - main
 name: Azure ARM Deployment
 jobs:
   build-and-deploy:
