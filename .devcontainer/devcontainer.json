@@ -4,6 +4,7 @@
 		"terminal.integrated.shell.linux": "/usr/bin/pwsh"
 	},
 	"extensions": [
+		"github.vscode-codeql",
 		"ms-vscode.azure-account",
 		"msazurermtools.azurerm-vscode-tools",
 		"samcogan.arm-snippets",
