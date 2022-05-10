@@ -1,0 +1,16 @@
+{
+	"name": "GitHub Bicep Demo",
+	"settings": {
+		"terminal.integrated.shell.linux": "/usr/bin/pwsh"
+	},
+	"extensions": [
+		"ms-vscode.azure-account",
+		"msazurermtools.azurerm-vscode-tools",
+		"samcogan.arm-snippets",
+    "ms-azuretools.vscode-bicep",
+		"DavidAnson.vscode-markdownlint",
+		"eamodio.gitlens",
+		"ms-vscode.PowerShell"
+	],
+	"image": "mcr.microsoft.com/azure-cloudshell:latest"
+}
