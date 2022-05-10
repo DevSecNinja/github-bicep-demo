@@ -7,7 +7,7 @@
 		"ms-vscode.azure-account",
 		"msazurermtools.azurerm-vscode-tools",
 		"samcogan.arm-snippets",
-    "ms-azuretools.vscode-bicep",
+		"ms-azuretools.vscode-bicep",
 		"DavidAnson.vscode-markdownlint",
 		"eamodio.gitlens",
 		"ms-vscode.PowerShell"
