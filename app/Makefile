@@ -7,7 +7,7 @@ default: all
 all: app
 
 app: app.c
-    $(CC) $(CFLAGS) -o app app.c
+	$(CC) $(CFLAGS) -o app app.c
 
 clean veryclean:
-    $(RM) app
+	$(RM) app
