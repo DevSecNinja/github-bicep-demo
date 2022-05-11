@@ -1,5 +1,6 @@
 param location string = resourceGroup().location
 param storagePrefix string
+param blobName string = 'myblob'
 
 module mystorage 'storage/azuredeploy.bicep' = {
   name: 'myawesomestoragemvi' 
@@ -12,8 +13,10 @@ module mystorage 'storage/azuredeploy.bicep' = {
 module myblob 'br:githubbicepdemo.azurecr.io/storage/blob:v1' = {
   name: 'myblob'
   params: {
-    blobName: 'myblob'
+    blobName: blobName
     storageAccountName: mystorage.outputs.storageName
-    properties: {}
+    properties: {
+      publicAccess: 'false'
+    }
   }
 }
