@@ -18,3 +18,11 @@ module servicebus 'br:githubbicepdemo.azurecr.io/servicebus/servicebus:v1'= {
     }
   }
 }
+
+module mystorageaccount 'storage/azuredeploy.bicep'= {
+  name: 'storagemodule'
+  params: {
+    location: location
+    storagePrefix: 'mvidemoph'
+  }
+}
