@@ -11,17 +11,19 @@ module mystorage 'storage/azuredeploy.bicep' = {
   }
 }
 
-module myblob 'blob/blob.bicep' = {
-  scope:resourceGroup()
-  name: 'default'
-  params: {
-    blobName: blobName
-    storageAccountName: mystorage.outputs.storageName
-    properties: {
-      publicAccess: 'false'
-    }
+
+resource servicebus 'Microsoft.ServiceBus/namespaces@2021-06-01-preview' = {
+  name: 'mvisbdemo'
+  location: location
+  tags: {
+    project: 'demo'
   }
-  dependsOn: [
-    mystorage
-  ]
+  sku: {
+    name: 'Basic'
+  }
+  identity:{
+    type: 'None'
+  }
+  properties:{
+  }
 }
