@@ -14,5 +14,6 @@ module myblob 'br:githubbicepdemo.azurecr.io/storage/blob:v1' = {
   params: {
     blobName: 'myblob'
     storageAccountName: mystorage.outputs.storageName
+    properties: {}
   }
 }
