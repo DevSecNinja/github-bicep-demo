@@ -24,6 +24,7 @@ jobs:
       with:
         inlineScript: |
           ls -la $GITHUB_WORKSPACE
+          az install bicep
           az bicep publish --file $GITHUB_WORKSPACE/blob/blob.bicep --target br:githubbicepdemo.azurecr.io/storage/blob:v1
     
     - name: Deploy Bicep files
