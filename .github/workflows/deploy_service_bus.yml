@@ -21,7 +21,6 @@ jobs:
       with:
         azcliversion: 2.31.0
         inlineScript: |
-          ls -la $GITHUB_WORKSPACE
           az bicep install
-          az bicep publish --file $GITHUB_WORKSPACE/servicebus/servicebus.bicep --target br:githubbicepdemo.azurecr.io/servicebus/servicebus:v1
+          az bicep publish --file ./servicebus/servicebus.bicep --target br:githubbicepdemo.azurecr.io/servicebus/servicebus:v1
           
