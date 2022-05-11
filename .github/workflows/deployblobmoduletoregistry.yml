@@ -9,7 +9,10 @@ jobs:
     steps:
 
     # Checkout code
-    - uses: actions/checkout@blobregistry
+    - name: Checkout the branch code
+      uses: actions/checkout@v2
+      with:
+        ref: blobtoregistry
 
       # Log into Azure
     - uses: azure/login@v1
