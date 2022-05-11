@@ -19,4 +19,7 @@ module myblob 'blob/blob.bicep' = {
       publicAccess: 'false'
     }
   }
+  dependsOn: [
+    mystorage
+  ]
 }
