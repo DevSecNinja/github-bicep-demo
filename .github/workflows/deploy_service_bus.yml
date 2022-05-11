@@ -1,8 +1,8 @@
 name: DeployServiceBusToACR
 on: 
   push:
-    branches:
-    - servicebus
+    paths:
+      - 'servicebus/**'
 
 jobs:
   build-and-deploy:
