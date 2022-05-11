@@ -3,6 +3,7 @@ param storagePrefix string
 param blobName string = 'myblob'
 
 module mystorage 'storage/azuredeploy.bicep' = {
+  scope:resourceGroup()
   name: 'myawesomestoragemvi' 
   params: {
     location: location
@@ -11,6 +12,7 @@ module mystorage 'storage/azuredeploy.bicep' = {
 }
 
 module myblob 'blob/blob.bicep' = {
+  scope:resourceGroup()
   name: 'myblob'
   params: {
     blobName: blobName
