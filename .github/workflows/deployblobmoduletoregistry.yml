@@ -2,8 +2,8 @@ name: DeployStorageToACR
 
 on: 
   push:
-    paths:
-      - 'blob/blob.bicep'
+    branches:
+    - blobtoregistry
 
 jobs:
   build-and-deploy:
@@ -25,4 +25,14 @@ jobs:
           ls -la $GITHUB_WORKSPACE
           az bicep install
           az bicep publish --file $GITHUB_WORKSPACE/blob/blob.bicep --target br:githubbicepdemo.azurecr.io/storage/blob:v1
-         
+    
+          # Deploy Bicep file
+    
+    - name: deploy
+      uses: azure/arm-deploy@v1
+      with:
+        subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
+        resourceGroupName: ${{ secrets.AZURE_RG }}
+        template: ./main.bicep
+        parameters: storagePrefix=bicepdemo
+        failOnStdErr: false
