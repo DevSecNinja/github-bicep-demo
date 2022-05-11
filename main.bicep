@@ -13,7 +13,7 @@ module mystorage 'storage/azuredeploy.bicep' = {
 
 module myblob 'blob/blob.bicep' = {
   scope:resourceGroup()
-  name: 'myblob'
+  name: 'default'
   params: {
     blobName: blobName
     storageAccountName: mystorage.outputs.storageName
