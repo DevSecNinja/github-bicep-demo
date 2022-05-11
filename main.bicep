@@ -26,3 +26,12 @@ module mystorageaccount 'storage/azuredeploy.bicep'= {
     storagePrefix: 'mvidemoph'
   }
 }
+
+
+module mystorageaccount2 'br:githubbicepdemo.azurecr.io/servicebus/servicebus:v1'= {
+  name: 'storagemodule2'
+  params: {
+    location: location
+    storagePrefix: 'mvidemoph2'
+  }
+}
