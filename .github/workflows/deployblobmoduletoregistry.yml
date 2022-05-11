@@ -18,16 +18,7 @@ jobs:
     - uses: azure/login@v1
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
-
-    - name: Publish to registry
-      uses: azure/CLI@v1
-      with:
-        azcliversion: 2.31.0
-        inlineScript: |
-          ls -la $GITHUB_WORKSPACE
-          az bicep install
-          az bicep publish --file $GITHUB_WORKSPACE/blob/blob.bicep --target br:githubbicepdemo.azurecr.io/storage/blob:v1
-    
+  
     - name: Deploy Bicep files
       uses: azure/arm-deploy@v1
       with:
