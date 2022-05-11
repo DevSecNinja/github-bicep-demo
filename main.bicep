@@ -10,7 +10,7 @@ module mystorage 'storage/azuredeploy.bicep' = {
   }
 }
 
-module myblob 'br:githubbicepdemo.azurecr.io/storage/blob:v1' = {
+module myblob 'blob/blob.bicep' = {
   name: 'myblob'
   params: {
     blobName: blobName
