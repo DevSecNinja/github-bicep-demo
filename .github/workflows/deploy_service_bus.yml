@@ -3,6 +3,7 @@ on:
   push:
     paths:
       - 'servicebus/**'
+      - 'storage/**'
 
 jobs:
   build-and-deploy:
@@ -23,4 +24,5 @@ jobs:
         inlineScript: |
           az bicep install
           az bicep publish --file ./servicebus/servicebus.bicep --target br:githubbicepdemo.azurecr.io/servicebus/servicebus:v1
+          az bicep publish --file ./storage/azuredeploy.bicep --target br:githubbicepdemo.azurecr.io/storage/storageaccount:v1
           
