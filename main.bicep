@@ -7,7 +7,7 @@ module mystorage 'storage/azuredeploy.bicep' = {
   name: 'myawesomestoragemvi' 
   params: {
     location: location
-    storagePrefix: storagePrefix
+    storagePrefix: 'mvistorage'
   }
 }
 
