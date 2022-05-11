@@ -28,7 +28,7 @@ module mystorageaccount 'storage/azuredeploy.bicep'= {
 }
 
 
-module mystorageaccount2 'br:githubbicepdemo.azurecr.io/servicebus/servicebus:v1'= {
+module mystorageaccount2 'br:githubbicepdemo.azurecr.io/storage/storageaccount:v1'= {
   name: 'storagemodule2'
   params: {
     location: location
