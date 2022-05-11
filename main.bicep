@@ -19,7 +19,7 @@ resource servicebus 'Microsoft.ServiceBus/namespaces@2021-06-01-preview' = {
     project: 'demo'
   }
   sku: {
-    name: 'Basic'
+    name: 'Standard'
   }
   identity:{
     type: 'None'
@@ -33,4 +33,7 @@ param name string = 'mytopics'
 resource topic 'Microsoft.ServiceBus/namespaces/topics@2021-06-01-preview'= {
   name: 'mvisbdemo/${name}'
   properties: {}
+  dependsOn:[
+    servicebus
+  ]
 }
