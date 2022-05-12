@@ -8,7 +8,7 @@ module mystorageaccount 'storage/azuredeploy.bicep'= {
   }
 }
 
-module mystorageaccount 'br:githubbicepdemo.azurecr.io/storage/storageaccount:v1'= {
+module mystorageaccount2 'br:githubbicepdemo.azurecr.io/storage/storageaccount:v1'= {
   name: 'modulestorage2'
   params: {
     location: location
