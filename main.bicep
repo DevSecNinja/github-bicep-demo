@@ -7,3 +7,14 @@ module mystorageaccount 'storage/azuredeploy.bicep'= {
     storagePrefix: 'mvistorage'
   }
 }
+
+module mystorageaccount 'br:githubbicepdemo.azurecr.io/storage/storageaccount:v1'= {
+  name: 'modulestorage2'
+  params: {
+    location: location
+    storagePrefix: 'mvistorage2'
+  }
+}
+
+
+
